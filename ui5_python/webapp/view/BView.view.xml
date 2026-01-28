@@ -1,0 +1,47 @@
+<mvc:View controllerName="root.ui5python.controller.BView"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <!-- <Text id="TxtID" text = "Enter your question"></Text>
+    <Input id="idIp" width="50%"/> 
+    <Button id="idBtn" text="Submit" press="onSub"/>     -->
+
+	<l:HorizontalLayout id="idHori" allowWrapping="true">
+	<Label id="idLab" labelFor="fileUploader" text="Upload a file to the local server:" class="sapUiMediumMarginEnd" />
+		<u:FileUploader
+			id="fileUploader" 
+			name="myFileUpload"
+			uploadUrl="upload/"
+			width = "50%"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"/>		
+</l:HorizontalLayout>			
+
+	<FeedInput
+        id="IDFeedInput"
+		post="onPost"
+        placeholder=" Ask me anything :) "
+		icon="https://media.lordicon.com/icons/wired/flat/288-avatar-man-search.gif"
+		class="sapUiSmallMarginTopBottom" />		
+	<List
+        id="IDList"
+		showSeparators="Inner"
+		items="{/EntryCollection}" >
+		<FeedListItem
+            id="IDFeedListItem"
+			sender="{Author}"
+			icon="{AuthorPicUrl}"
+			senderPress="onSenderPress"
+			iconPress="onIconPress"
+			info="{Author}"
+			timestamp="{Date}"
+			text="{Text}"
+			convertLinksToAnchorTags="All"/>
+	</List>
+
+    </Page>
+</mvc:View>
+
+

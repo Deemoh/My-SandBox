@@ -1,0 +1,10 @@
+<mvc:View controllerName="root.ui5python.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+    <Page id="idPage">
+    <Text id="IdTxt" text="Who let the dogs out?"></Text>
+    </Page>    
+    </App>
+</mvc:View>
