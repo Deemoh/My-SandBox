@@ -1,0 +1,4 @@
+applications:
+- name: deemoApp
+memory: 300M
+random-route: true
